@@ -1,0 +1,17 @@
+@startuml
+actor User
+participant TGbot
+participant Server
+participant Camera
+participant Robot
+
+User --> TGbot : Привезти напиток пользователю
+TGbot --> Server : Привезти напиток пользователю
+Server --> Camera : Получить изображение с камеры
+Camera --> Server : Передать изображение с камеры
+Server --> Robot : Запустить двигатель робота
+Server --> Robot : Задать траекторию движения робота
+Server --> Robot : Выключить двигатель робота
+
+Robot --> User : Доставить напиток пользователю
+@enduml
