@@ -1,10 +1,14 @@
 @startuml
-Camera o-- Spot
-Camera o-- Color
-Camera o-- VideoCapture
-Camera o-- Mat
-Spot o-- Color
+Camera --* Spot
+Camera --* Color
+Camera --* VideoCapture
+Camera --* Mat
+Spot --* Color
 Class Spot{
+Color color;
+==
+pair<int, int> center;
+==
 void setColor(const Color &color)
 ..
 const setColor(const Color &color)
@@ -29,6 +33,16 @@ int B
 int B1
 }
 class Camera{
+Spot front
+==
+Spot back
+==
+Spot target
+==
+Mat frame
+==
+VideoCapture cap
+==
 bool haveRobot()
 ..
 void detectRobot()
