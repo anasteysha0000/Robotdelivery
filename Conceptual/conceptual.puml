@@ -1,27 +1,46 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+Camera o-- Spot
+Camera o-- Color
+Camera o-- VideoCapture
+Camera o-- Mat
+Spot o-- Color
+Class Spot{
+void setColor(const Color &color)
+..
+const setColor(const Color &color)
+..
+const Color &getColor()
+..
+void setCenter(const pair<int,int> &centre)
+..
+pair<int,int> &getCenter()
 }
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Color{
+int R
+==
+int R1
+==
+int G
+==
+int G1
+==
+int B
+==
+int B1
 }
-
+class Camera{
+bool haveRobot()
+..
+void detectRobot()
+..
+Mat detect_spot_on_image(Spot part)
+..
+pair <int, int> center_a_contrast_spot(Spot part)
+..
+pair <int, int> center_a_robot(pair <int, int> front, pair <int, int> back)
+..
+double angle_need_to_point(pair <int, int> center_robot, pair <int, int> center_spot_target)
+..
+ double distance_beetwen_points(pair <int, int> center_robot, pair <int, int> center_spot_target)
+}
 @enduml

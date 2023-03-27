@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_PREFIX_PATH "C:/lib/OpenCV/install/opencv/x64/vc17/lib")
-set(PROJECT_NAME "Robotdelivery")
+set(PROJECT_NAME "mai")
 
 project(${PROJECT_NAME})
 
